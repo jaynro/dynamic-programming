@@ -1,5 +1,16 @@
 def solve_knapsack(profits, weights, capacity):
   # TODO: Write your code here
+
+  # base check
+
+  # initialize p1
+
+  # Calculate P1 if needed
+
+  # Calculate  p2
+
+  #return Max
+
   return -1
 
 def main():
