@@ -9,12 +9,13 @@ def solve_knapsack_recursive(profits, weights, capacity, index):
   p1=0
 
   # Calculate P1 if needed: 
-  # If the weight of the element at current index exceeds, capacity then don;t process
+  # If the weight of the element at current index exceeds, 
+  # capacity then don't process
 
-  
+  currentWeight=weights[index]
   newIndex = index +1
   if currentWeight <= capacity:
-    currentWeight=weights[index]
+    
     currentProfit=profits[index]
     newCapacity =capacity - currentWeight
     p1=currentProfit +  solve_knapsack_recursive(profits,weights, newCapacity, newIndex )
