@@ -1,9 +1,13 @@
 
-def solve_knapsack_recursive(profits, weights, capacity, index):
+def solve_knapsack_memo(dp,profits, weights, capacity, index):
   # base check
 
   if capacity <= 0 or index >=  len(profits):
     return 0
+
+  #If we have it, return it
+  if dp[capacity, index] != -1:
+    return dp[capacity, index]   
 
   # initialize p1
   p1=0
@@ -23,13 +27,20 @@ def solve_knapsack_recursive(profits, weights, capacity, index):
   # Calculate  p2
   p2 =solve_knapsack_recursive(profits,weights, capacity, newIndex )
 
+  #store it
+  result = max (p1,p2)
+  dp[capacity, index] = result
   #return Max
-  return max (p1,p2)
+ 
+  return result
 
 def solve_knapsack(profits, weights, capacity):
+
+  #initialize array
+  dp = [-1 for x in capacity for y in len(profits)  ]
   # Delegate it; first iteraction
 
-  return solve_knapsack_recursive(profits, weights, capacity, 0)
+  return solve_knapsack_memo(dpprofits, weights, capacity, 0)
 
 
 def main():
