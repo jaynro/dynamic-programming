@@ -37,7 +37,7 @@ def solve_knapsack_memo(dp,profits, weights, capacity, index):
 def solve_knapsack(profits, weights, capacity):
 
   #initialize array
-  dp = [-1 for x in capacity for y in len(profits)  ]
+  dp = [[-1 for x in range(capacity+1)] for y in range(len(profits))]
   # Delegate it; first iteraction
 
   return solve_knapsack_memo(dpprofits, weights, capacity, 0)
